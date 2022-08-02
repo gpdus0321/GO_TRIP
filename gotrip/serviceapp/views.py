@@ -25,3 +25,21 @@ def membership(request):
 
 def write(request):
     return render(request, 'serviceapp/write.html')
+
+def create(request):
+  if request.method=="POST":
+    post = Post()
+    post.title = request.POST['title']
+    post.body = request.POST['body']
+    post.date = timezone.now()
+    post.image = request.FILES['image']
+    post.save()
+    return redirect('/detail/'+str(post.id),{'post':post})
+  else:
+    post = Post()
+    return render(request,'create.html',{'post':post})
+
+  try:
+      post.image = request.FILES['image']
+  except:
+      post.image = None

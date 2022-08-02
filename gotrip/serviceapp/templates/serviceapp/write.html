@@ -19,9 +19,18 @@
     </div>
     <hr style="background-color: white; height: 10px;border: 0px;">
 
+
 <!-- 메인 내용(제출하면 course페이지로 넘어가기) -->
     <div class="contain">
         <br><br>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <p align="right">사진 업로드 : <input name="image" type="file"></p>
+
+        </form>
+
         <form method="POST" action="/course/">
             {% csrf_token %}
             <p align=center><input type="submit" value="업로드" class="temp"></p>

@@ -16,6 +16,8 @@ Including another URLconf
 from django.urls import path, include
 
 from serviceapp.views import intro, main, course, login, membership, write
+from django.conf import settings
+from django.conf.urls.static import static
 
 app_name = "serviceapp"
 
@@ -27,4 +29,4 @@ urlpatterns = [
     path('membership/', membership, name='membership'),
     path('write/', write, name='write'),
 
-]
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
