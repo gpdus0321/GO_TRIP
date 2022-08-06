@@ -25,6 +25,7 @@
             <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
                 <a href="{% url 'blogapp:detail' post.id %}">
                     <h3 style="text-align: center">{{ post.제목 }}</h3>
+
                     <img src="{{ post.이미지.url }}" height="100">
                 </a>
 
