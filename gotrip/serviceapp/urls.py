@@ -24,7 +24,6 @@ app_name = "serviceapp"
 urlpatterns = [
     path('', intro, name='intro'),
     path('main/', main, name='main'),
-    path('course/', course, name='course'),
     path('login/', login, name='login'),
     path('membership/', membership, name='membership'),
     path('write/', write, name='write'),
