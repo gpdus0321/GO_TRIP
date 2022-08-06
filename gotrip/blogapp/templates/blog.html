@@ -20,20 +20,27 @@
     <hr style="background-color: white; height: 10px;border: 0px;">
 
 <!-- 메인 내용 -->
-    <div class="row">
+    <div class="contain">
+        <div id="columns" style="column-gap: 0px; padding-top: 30px;">
         {% for post in posts %}
+
             <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
                 <a href="{% url 'blogapp:detail' post.id %}">
                     <h3 style="text-align: center">{{ post.제목 }}</h3>
 
                     <img src="{{ post.이미지.url }}" height="100">
-                </a>
 
-            </div>
+            <figure class="blog_figure">
+                <a href="{% url 'blogapp:detail' post.id %}" style="text-decoration: none; color: black;">
+                    <img class="blog_img" style="width: 350px; height: 400px;" src="{{ post.이미지.url }}">
+                    <figcaption class="blog_figcaption">{{ post.제목 }}</figcaption>
+
+                </a>
+            </figure>
         {% endfor %}
+        </div>
     </div>
-    <div class="contain">
-        <p align=center> <button><a href="/blog/write/" style="text-decoration: none; color: black;">게시글 작성</a></button></p>
+    <p align=center> <button><a href="/blog/write/" style="text-decoration: none; color: black;">게시글 작성</a></button></p>
     </div>
 
 {% endblock %}
