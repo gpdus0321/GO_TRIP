@@ -4,24 +4,31 @@
 {% block content %}
     <div class="header">
         {% include 'header.html' %}
-    <div>
-        <div>
-            <h1>제목</h1>
-            {{ blog_detail.제목 }}
-        </div>
-        <div>
-            <h2>내용</h2>
-            {{ blog_detail.내용 }}
-        </div>
-        <div>
-            <h3>이미지</h3>
-            {% if blog_detail.이미지 %}
-                <img src="{{ blog_detail.이미지.url }}" alt="" height="600">
-            {% endif %}
-        </div>
-        <div>
-            <h3>조회수</h3>
-            {{ blog_detail.counting }}
+    <div class="section">
+        <h1>제목</h1>
+        {{ blog_detail.제목 }}
+    </div></div>
+
+
+    <hr style="background-color: white; height: 10px;border: 0px;">
+
+    <div class="contain">
+        <br>
+        <div class="base_box" style="text-align: center;">
+            <div>
+                <h2>내용</h2>
+                {{ blog_detail.내용 }}
+            </div>
+            <div>
+                <h3>이미지</h3>
+                {% if blog_detail.이미지 %}
+                    <img src="{{ blog_detail.이미지.url }}" alt="" height="600">
+                {% endif %}
+            </div>
+            <div>
+                <h3>조회수</h3>
+                {{ blog_detail.counting }}
+            </div>
         </div>
     </div>
 {% endblock %}

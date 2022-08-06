@@ -52,40 +52,16 @@
             <h3>계절별 추천 여행지</h3>
             <ul class="best_season">
                 <li>
-                    <div class="section_title">봄</div>
+                    <div class="section_title">순위</div>
+                    {% for post in  %}
+
                     <div class="section_contents">
-                        <a href="여행지/제주도.html" class="1">1. 제 주 도</a><br>
-                        <a href="여행지/대구.html" class="2">2. 대 구</a><br>
-                        <a href="여행지/세종특별자치시.html" class="3">3. 세 종</a><br>
+                        <a href="여행지/제주도.html" class="1">{{ post.제목 }}</a><br>
                     </div>
+
+                    {% endfor %}
                 </li>
 
-                <li>
-                    <div class="section_title">여름</div>
-                    <div class="section_contents">
-                        <a href="여행지/강릉.html" class="1">1. 강 릉</a><br>
-                        <a href="여행지/부산.html" class="2">2. 부 산</a><br>
-                        <a href="여행지/포항.html" class="3">3. 포 항</a><br>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="section_title">가을</div>
-                    <div class="section_contents">
-                        <a href="여행지/제주도.html" class="1">1. 제 주 도</a><br>
-                        <a href="여행지/대구.html" class="2">2. 대 구</a><br>
-                        <a href="여행지/세종특별자치시.html" class="3">3. 세 종</a><br>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="section_title">겨울</div>
-                    <div class="section_contents">
-                        <a href="여행지/제주도.html" class="1">1. 제 주 도</a><br>
-                        <a href="여행지/강릉.html" class="2">2. 강 릉</a><br>
-                        <a href="여행지/영덕.html" class="3">3. 영 덕</a><br>
-                    </div>
-                </li>
             </ul>
         </div>
     </div>

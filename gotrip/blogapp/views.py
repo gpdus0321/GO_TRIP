@@ -3,6 +3,7 @@ from .forms import PostForm
 from .models import Post
 # Create your views here.
 
+
 def blog(request):
     posts = Post.objects.filter().order_by('-counting')
     return render(request, 'blog.html', {'posts':posts})
@@ -18,6 +19,7 @@ def write(request):
     else:
         form = PostForm()
     return render(request, 'write.html', {'form':form})
+
 
 def detail(request, blog_id):
     blog_detail = get_object_or_404(Post, pk=blog_id)
