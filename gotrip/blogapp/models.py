@@ -7,8 +7,8 @@ class Post(models.Model):
     체크리스트1 = models.CharField(max_length=100, default='')
     체크리스트2 = models.CharField(max_length=100, default='')
     체크리스트3 = models.CharField(max_length=100, default='')
-    이미지 = models.ImageField(blank=False, upload_to='blog_photo')
     내용 = models.TextField()
+    썸네일 = models.ImageField(blank=False, upload_to='blog_photo')
     createDate = models.DateTimeField(auto_now_add=True)
     counting = models.PositiveIntegerField(default=0)
 

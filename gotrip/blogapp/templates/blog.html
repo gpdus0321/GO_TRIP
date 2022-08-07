@@ -25,7 +25,7 @@
         {% for post in posts %}
             <figure class="blog_figure">
                 <a href="{% url 'blogapp:detail' post.id %}" style="text-decoration: none; color: black;">
-                    <img class="blog_img" style="width: 350px; height: 400px;" src="{{ post.이미지.url }}">
+                    <img class="blog_img" style="width: 350px; height: 400px;" src="{{ post.썸네일.url }}">
                     <figcaption class="blog_figcaption">{{ post.제목 }}</figcaption>
                 </a>
             </figure>
