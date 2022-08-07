@@ -2,50 +2,80 @@
 {% load static %}
 
 {% block content %}
-    <div class="header">
-        {% include 'header.html' %}
-    <div class="section">
-        <h1>제목</h1>
-        {{ blog_detail.제목 }}
-    </div></div>
-
-	<div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                {{blog_detail.체크리스트1}}
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                {{blog_detail.체크리스트2}}
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                {{blog_detail.체크리스트3}}
-            </label>
-        </div>
-
-//kweon_map
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-		<table>
-			<tr>
-				<td>검색하고자 하는 지역명 또는 도로주소명을 입력해주세요.</td>
-				<td><input type="text" id="address"></td>
-				<td><button type="submit" id="searchBtn">검색</button></td>
-			</tr>
-		</table>
-		<div id="map" style="width:500px;height:500px;"></div>
 
 	<!-- kakao API -->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6657cd0c72e2dcf0a2a44ab6ce707727&libraries=services"></script>
-	<script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+
+
+
+    <div class="header">
+        {% include 'header.html' %}
+        <div class="section">
+            <h1>제목</h1>
+            {{ blog_detail.제목 }}
+        </div>
+    </div>
+
+
+
+
+
+    <hr style="background-color: white; height: 10px;border: 0px;">
+
+    <div class="contain">
+        <br>
+        <div class="base_box" style="text-align: center;">
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    {{blog_detail.체크리스트1}}
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    {{blog_detail.체크리스트2}}
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    {{blog_detail.체크리스트3}}
+                </label>
+            </div>
+
+            <table>
+                <tr>
+                    <td>검색하고자 하는 지역명 또는 도로주소명을 입력해주세요.</td>
+                    <td><input type="text" id="address"></td>
+                    <td><button type="submit" id="searchBtn">검색</button></td>
+                </tr>
+            </table>
+            <div id="map" style="width:500px;height:500px;"></div>
+
+            <div>
+                <h2>내용</h2>
+                {{ blog_detail.내용 }}
+            </div>
+            <div>
+                <h3>이미지</h3>
+                {% if blog_detail.이미지 %}
+                    <img src="{{ blog_detail.이미지.url }}" alt="" height="600">
+                {% endif %}
+            </div>
+            <div>
+                <h3>조회수</h3>
+                {{ blog_detail.counting }}
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
 
 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 	    mapOption = {
@@ -91,28 +121,4 @@
 	});
 
 	</script>
-
-
-
-    <hr style="background-color: white; height: 10px;border: 0px;">
-
-    <div class="contain">
-        <br>
-        <div class="base_box" style="text-align: center;">
-            <div>
-                <h2>내용</h2>
-                {{ blog_detail.내용 }}
-            </div>
-            <div>
-                <h3>이미지</h3>
-                {% if blog_detail.이미지 %}
-                    <img src="{{ blog_detail.이미지.url }}" alt="" height="600">
-                {% endif %}
-            </div>
-            <div>
-                <h3>조회수</h3>
-                {{ blog_detail.counting }}
-            </div>
-        </div>
-    </div>
 {% endblock %}
