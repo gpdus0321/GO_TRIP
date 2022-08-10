@@ -23,15 +23,14 @@
 
 
 
-    <hr style="background-color: white; height: 10px;border: 0px;">
+<div style="background-color: white; height: 42px;border: 0px; display:flex; color: rgb(150, 150, 150); align-items:center; flex-direction: row-reverse; margin-right: 10px;">조회수 {{ blog_detail.counting }}</div>
 
-{#    <div class="contain">#}
+    <div class="contain">
         <br>
-        <div class="container">
+        <div style="--bs-gutter-x: 1.5rem; --bs-gutter-y: 0; width: 1000px; padding-right: calc(var(--bs-gutter-x) * .5); padding-left: calc(var(--bs-gutter-x) * .5); margin-right: auto; margin-left: auto; background-color: white; border: 2px solid skyblue; border-radius: 20px;">
             <div class="row">
                 <div class="col-4">
-{#                    <div class="base_box">#}
-                    <div class="card">
+                    <div class="card" style="margin-top: 50%;">
                         <div class="card-body p-4">
                              <div class="form-check mb-4">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -55,34 +54,28 @@
                     </div>
                 </div>
                 <div class="col-8">
-                    <table>
-                        <tr>
-                            <td>검색하고자 하는 지역명 또는 도로주소명을 입력해주세요.</td>
-                            <td><input type="text" id="address"></td>
-                            <td>
-                                <button type="submit" id="searchBtn">검색</button>
-                            </td>
-                        </tr>
-                    </table>
+                    <div class="searchArea" style="width: 500px; top: 10px; margin-left: 0;">
+                        <input type="text" id="address" class="search" placeholder="검색하고자 하는 지역명 또는 도로주소명을 입력해주세요." style="width: 440px;">
+                        <input type="submit" id="searchBtn" class="search_submit" value="검색">
+                    </div>
+                    <hr style="background-color: white; height: 1px;border: 0px; margin-top: 10px;">
                     <div id="map" style="width:500px;height:500px;"></div>
                 </div>
             </div>
+            <br><br>
         </div>
-{#    </div>#}
         <br>
 
-        <div style="text-align: center">
+        <div class="base_box" style="text-align: center">
             <div>
                 <h2>포스트</h2>
                 <div>{{ blog_detail.내용 | safe }}</div>
             </div>
-            <div>
-                <h3>조회수</h3>
-                {{ blog_detail.counting }}
-            </div>
         </div>
 
-
+<hr>
+    <p align=center><button style="padding: 0;width: 100px;height: 40px;text-align: center;line-height: 40px;font-weight: bold; border-radius: 20px; cursor: pointer; margin-top: 0px;">
+        <a href="/blog" style="text-decoration: none; color: black; font-size: 15px;">목록</a></button></p>
 
 
     <script>

@@ -180,7 +180,7 @@
 
 .searchArea {
     width: 310px;
-    height: 30px;
+    height: 40px;
     background: rgba(240, 240, 240, 0.5);
     position: relative;
     top: 210px;
@@ -240,7 +240,21 @@ source{
     border: 2px solid skyblue;
     border-radius: 20px;
     text-align: center;
+}
 
+
+.base_base {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 80%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-right: auto;
+    margin-left: auto;
+    background-color: white;
+    border: 2px solid skyblue;
+    border-radius: 20px;
+    text-align: center;
 }
 
 .base_box div {
@@ -309,14 +323,9 @@ span{
     display: inline;
 }
 
-blog_columns {
-    box-sizing: border-box;
-    column-width:400px;
-    column-gap: 15px;
-    padding-top: 30px;
-}
 
-blog_figure {
+
+.blog_figure {
     display: inline-block;
     border:1px solid rgba(0,0,0,0.2);
     margin-bottom: 15px;
@@ -326,10 +335,30 @@ blog_figure {
     text-decoration: none;
 }
 
-blog_figcaption {
+.blog_figcaption {
     border-top:1px solid rgba(0,0,0,0.2);
     padding:10px;
     margin-top:11px;
     text-decoration: none;
 
+}
+
+button>a{
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    background-color: white;
+    border: 2px solid skyblue;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    /*글자 수평 정령*/
+    line-height: 40px;
+    /*글자 수직 정령*/
+    font-weight: bold;
+
+    border-radius: 20px;
+    cursor: pointer;
 }
