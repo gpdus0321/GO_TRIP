@@ -11,13 +11,14 @@
             <h2>여행 코스</h2>
             <p>사이트 운영자가 추천하는 여행지들 입니다.</p>
         </div>
-        <div class="searchArea">
-          <input type="search" class="search" placeholder="가고싶은 지역을 검색해주세요" maxlength="10" size="40">
-          <input type="submit" class="search_submit" value="검색">
-        </div>
     </div>
 
-    <hr style="background-color: white; height: 10px;border: 0px;">
+    <div class="line">
+        <div class="searchArea">
+            <input type="search" class="search" placeholder="가고싶은 지역을 검색해주세요" maxlength="10" size="40">
+            <input type="submit" class="search_submit" value="검색">
+        </div>
+    </div>
 
 <!-- 메인 내용 -->
     <div class="contain">
@@ -31,8 +32,8 @@
             </figure>
         {% endfor %}
         </div>
-        <hr style="border: 1px dashed white; background-color: white;">
-        <p align=center> <button><a href="/blog/write/" style="text-decoration: none; color: black;">게시글 작성</a></button></p>
+        <hr style="border: 1px solid white; opacity:1">
+        <p align=center> <button><a href="/blog/write/" >게시글 작성</a></button></p>
         <br>
     </div>
 
