@@ -3,27 +3,14 @@
 
 {% block content %}
 
-    <!-- kakao API -->
-    <script type="text/javascript"
-            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6657cd0c72e2dcf0a2a44ab6ce707727&libraries=services"></script>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-
-
-
-
     <div class="header">
         {% include 'header.html' %}
         <div class="section">
-            <h1>제목</h1>
-            {{ blog_detail.제목 }}
+            <h1>{{ blog_detail.제목 }}</h1>
         </div>
     </div>
 
-
-
-
-
-<div class="line">조회수 {{ blog_detail.counting }}</div>
+    <div class="line">조회수 {{ blog_detail.counting }}</div>
 
     <div class="contain">
         <br>
@@ -66,17 +53,16 @@
         </div>
         <br>
 
-        <div class="base_box" style="text-align: center">
+        <div class="base_box">
             <div>
-                <h2>포스트</h2>
+                <h2 style="font-weight: bold;">{{blog_detail.제목}}</h2><hr>
                 <div>{{ blog_detail.내용 | safe }}</div>
             </div>
         </div>
 
 <hr>
-    <p align=center><button>
-        <a href="/blog">목록</a></button></p>
-
+    <p align=center><button><a href="/blog">목록</a></button></p>
+<br>
 
     <script>
 
