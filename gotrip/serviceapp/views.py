@@ -3,12 +3,17 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 # Create your views here.
+from blogapp.models import Post
+
+
 def intro(request):
     return render(request, 'serviceapp/intro.html')
 
 
 def main(request):
-    return render(request, 'serviceapp/main.html')
+    nac_rank = Post.objects.filter().order_by('-counting')
+    nac_rank = nac_rank[:3]
+    return render(request, 'serviceapp/main.html', {'nac_rank':nac_rank})
 
 
 def course(request):
@@ -43,3 +48,6 @@ def create(request):
       post.image = request.FILES['image']
   except:
       post.image = None
+
+
+

@@ -8,6 +8,10 @@ def blog(request):
     posts = Post.objects.filter().order_by('-counting')
     return render(request, 'blog.html', {'posts':posts})
 
+def blog2(request):
+    posts = Post.objects.filter().order_by('-counting')
+    return render(request, 'serviceapp/main.html', {'posts':posts})
+
 
 def write(request):
     if request.method == "POST" or request.method == 'FILES':  #입력값 저장

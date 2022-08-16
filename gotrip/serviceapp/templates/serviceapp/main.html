@@ -29,7 +29,7 @@
                 제작자가 처음 만들어본 웹페이지이므로 형편없을 수도 있지만 지나가주세요.<br>
                 방학동안 백엔드개발을 배워서 더 나은 모습으로 돌아오겠습니다. 감사합니다.
             </p>
-            <p>감사합니다.</p>
+            <p>감alert alert-primary" role="alert사합니다.</p>
         </div>
         <div class="cmd">
             <input type="button" name="btnclose" class="button" value="닫기" >
@@ -46,8 +46,10 @@
                 <input type="search" class="search" placeholder="가고싶은 지역을 검색해주세요" maxlength="10" size="40">
                 <input type="submit" class="search_submit" value="검색">
             </div>
+        </div>
 
             <br><br><br><br>
+<<<<<<< HEAD
             <h3>계절별 추천 여행지</h3>
             <ul class="best_season">
                 <li>
@@ -55,12 +57,35 @@
 
                     <div class="section_contents">
                         <a href="여행지/제주도.html" class="1">제주도?</a><br>
+=======
+            <div class="row justify-content-md-center">
+                <center class="alert alert-primary col-5 " role="alert" >
+                <h3>계절별 추천 여행지</h3>
+                    <div class="section_title">
+                        순위
+                        <div class="rank">
+                            <div class="summary__card">
+                                <h4 class="summary__card_info">
+                                    <table class="table-primary">
+                                        {% for post in nac_rank %}
+                                            <a href="{% url 'blogapp:detail' post.id %}" style="text-decoration: none; color: black;">
+                                                <figcaption class="blog_figcaption">{{ post.제목 }}</figcaption>
+                                            </a>
+                                        {% endfor %}
+                                    </table>
+                                </h4>
+                            </div>
+                        </div>
+>>>>>>> 2828ee19e44f53a9129b2b7fb7190ced4083cb1a
                     </div>
-                </li>
-
-            </ul>
+                </center>
+            </div>
+                    <!--<div class="section_contents">
+                        <a href="여행지/제주도.html" class="1">{{ post.제목 }}</a><br>
+                    </div>-->
+                <div class=""> </ul>
         </div>
-    </div>
+    </center>
 
 <!-- 메인 내용 -->
     <hr style="background-color: white; height: 10px;border: 0px;">
