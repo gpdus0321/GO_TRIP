@@ -126,6 +126,7 @@
 .section_contents a {
     text-decoration: none;
     color: black;
+    font-size: 15px;
 }
 
 .main_text {

@@ -56,30 +56,11 @@
                     <div class="section_title">순위</div>
 
                     <div class="section_contents">
-                        <a href="여행지/제주도.html" class="1">제주도?</a><br>
-=======
-            <div class="row justify-content-md-center">
-                <center class="alert alert-primary col-5 " role="alert" >
-                <h3>계절별 추천 여행지</h3>
-                    <div class="section_title">
-                        순위
-                        <div class="rank">
-                            <div class="summary__card">
-                                <h4 class="summary__card_info">
-                                    <table class="table-primary">
-                                        {% for post in nac_rank %}
-                                            <a href="{% url 'blogapp:detail' post.id %}" style="text-decoration: none; color: black;">
-                                                <figcaption class="blog_figcaption">{{ post.제목 }}</figcaption>
-                                            </a>
-                                        {% endfor %}
-                                    </table>
-                                </h4>
-                            </div>
-                        </div>
->>>>>>> 2828ee19e44f53a9129b2b7fb7190ced4083cb1a
-                    </div>
-                </center>
-            </div>
+                         {% for post in nac_rank %}
+                             <a href="{% url 'blogapp:detail' post.id %}" class="{{forloop.counter}}">
+                                 {{forloop.counter}}위 {{ post.제목 }}
+                             </a><br>
+                         {% endfor %}
                     <!--<div class="section_contents">
                         <a href="여행지/제주도.html" class="1">{{ post.제목 }}</a><br>
                     </div>-->
