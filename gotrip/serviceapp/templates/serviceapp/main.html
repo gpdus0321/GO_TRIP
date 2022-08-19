@@ -21,15 +21,15 @@
     </script>
     <!--팝업창-->
     <div class="popup">
-        <div class="popup_title">저희 홈페이지를 찾아주셔서 감사합니다.</div>
+        <div class="popup_title">저희 GO TRIP을 찾아주셔서 감사합니다.</div>
         <div class="popup_content">
-            <p>저희 Go Trip을 찾아주셔서 감사합니다.</p>
+            <p>저희 GO TRIP을 찾아주셔서 감사합니다.</p>
             <p>
-                여행을 좋아하는 제작자가 이런 사이트가 있으면 좋겠다는 마음으로 만들어 졌습니다.<br>
-                제작자가 처음 만들어본 웹페이지이므로 형편없을 수도 있지만 지나가주세요.<br>
-                방학동안 백엔드개발을 배워서 더 나은 모습으로 돌아오겠습니다. 감사합니다.
+                여행을 좋아하는 사이트 개발자들이 이런 사이트가 있으면 좋겠다는 마음으로 만들게된 페이지입니다.<br>
+                모두가 처음 만들어본 웹페이지이므로 어설프기도 하지만 더욱 발전해 나가겠습니다.<br>
+                방학동안 백엔드개발을 배워서 더 나은 모습으로 돌아오겠습니다. <br>
+                감사합니다.
             </p>
-            <p>감alert alert-primary" role="alert사합니다.</p>
         </div>
         <div class="cmd">
             <input type="button" name="btnclose" class="button" value="닫기" >
@@ -43,8 +43,11 @@
         <div class="section">
             <h2 style="font-size: 60px; margin-bottom: 20px;">GO TRIP</h2>
             <div class="main_searchArea">
-                <input type="search" class="search" placeholder="가고싶은 지역을 검색해주세요" maxlength="10" size="40">
-                <input type="submit" class="search_submit" value="검색">
+                <form  action="/blog/search" method="post">
+                    {% csrf_token %}
+                    <input type="search" class="search" placeholder="가고싶은 지역을 검색해주세요" aria-label="Search" name="q" value="{{q}}" maxlength="10" size="40">
+                    <input type="submit" class="search_submit" value="검색"></input>
+                </form>
             </div>
         </div>
 

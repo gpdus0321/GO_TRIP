@@ -29,8 +29,7 @@
 
             {% if not blogs %}
 
-                <p align="center">검색 결과가 없습니다</p>
-
+                <p align="center"style="margin: 0 auto;" ">검색 결과가 없습니다</p>
             {% else %}
 
                 {% for post in blogs.all %}
@@ -41,7 +40,10 @@
                         </a>
                     </figure>
                 {% endfor %}
+            {% endif %}
         </div>
     </div>
-            {% endif %}
+
+
+
 {% endblock %}
