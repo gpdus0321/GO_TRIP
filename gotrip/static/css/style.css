@@ -1,6 +1,5 @@
 
 .intro_header {
-    width: 100vw;
     height: 100vh;
     background-repeat: no-repeat;
     background: url(../img/intro.jpg);
@@ -63,7 +62,6 @@
 
 
 .header {
-    width: 100%;
     height: 373px;
     background-repeat: no-repeat;
     background: url(../img/intro.jpg);
@@ -77,31 +75,23 @@
     text-align: center;
 }
 
-.section h3 {
+.section h4 {
     margin: 10px 0 -10px 0;
     font-size: 50px;
     color: rgb(71, 132, 201);
 }
 
 
-
 .best_season {
     position: relative;
-    top: 85px;
-    display: flex;
-    width: 380px;
-    list-style: none;
-    margin: auto;
-}
-
-.best_season>li {
-    flex: auto;
+    top: -50px;
+    width: 320px;
     height: 132px;
-    margin: 0% 20px;
-    width: 280px;
+    list-style: none;
     background: white;
     border: 3px dashed skyblue;
     border-radius: 20px;
+    margin: auto;
     text-align: center;
 }
 
@@ -109,18 +99,17 @@
 .section_title {
     position: relative;
     top: -20px;
-    height: 10px;
     color: steelblue;
     font-size: 30px;
     font-weight: 600;
+    height: 30px;
 }
 
 .section_contents {
     font-size: 1.2em;
     font-weight: 700;
-
-    margin-top: 20px;
     height: 90px;
+    bottom: 20px;
 }
 
 .section_contents a {
@@ -130,11 +119,7 @@
 }
 
 .main_text {
-    width: 80%;
-    height: 600px;
-    margin: 0px 10%;
-    min-width: 1300px;
-
+    margin: 0 10%;
 }
 
 .main_text>h1 {
@@ -150,11 +135,8 @@
 
 .info {
     text-align: left;
-    width: 100%;
     display: flex;
-    margin: 49px auto;
     background-color: white;
-    height: 327px;
     border-radius: 100px;
 }
 
@@ -173,20 +155,10 @@
 
 .contain {
     background-color: rgba(203, 221, 238, 0.5);
-    margin: 0;
 }
 
-.wrap section .serchArea {
-    width: 310px;
-    height: 40px;
-    background: rgba(256, 256, 256, 0.5);
-    border-radius: 5px;
-    margin-top: 24px;
-    margin: 0 auto;
-
-}
 .main_searchArea {
-    width: 310px;
+    width: 320px;
     height: 40px;
     background: rgba(256, 256, 256, 0.5);
     border-radius: 5px;
@@ -200,6 +172,7 @@
     height: 40px;
     background: rgba(240, 240, 240, 0.5);
     position: relative;
+    border-radius: 10px;
 }
 
 .line {
@@ -222,6 +195,7 @@
 }
 
 .search_submit {
+    border-radius: 10px;
     border: none;
     width: 50px;
     height: 30px;

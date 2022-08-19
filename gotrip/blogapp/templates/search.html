@@ -18,19 +18,21 @@
             <form  action="/blog/search" method="post">
                 {% csrf_token %}
                 <input type="search" class="search" placeholder="가고싶은 지역을 검색해주세요" aria-label="Search" name="q" value="{{q}}" maxlength="10" size="40">
-                <button type="submit" class="search_submit" >검색</button>
+                <input type="submit" class="search_submit" value="검색">
             </form>
         </div>
     </div>
 
 <!-- 메인 내용 -->
     <div class="contain">
-        <div id="columns" style="column-gap: 0px; padding-top: 30px;">
+        {% if not blogs %}
+            <br><br><br><br>
+            <h1 align="center">검색 결과가 없습니다.</h1><br>
+            <h6 align="center">원하신다면 자유롭게 글을 작성해주세요</h6>
 
-            {% if not blogs %}
-
-                <p align="center"style="margin: 0 auto;" ">검색 결과가 없습니다</p>
-            {% else %}
+            <br><br><br><br>
+        {% else %}
+            <div id="columns" style="column-gap: 0px; padding-top: 30px;">
 
                 {% for post in blogs.all %}
                     <figure class="blog_figure">
@@ -40,8 +42,11 @@
                         </a>
                     </figure>
                 {% endfor %}
-            {% endif %}
-        </div>
+            </div>
+        {% endif %}
+        <hr style="border: 1px solid white; opacity:1">
+        <p align=center> <button><a href="/blog/write/" >게시글 작성</a></button></p>
+        <br>
     </div>
 
 

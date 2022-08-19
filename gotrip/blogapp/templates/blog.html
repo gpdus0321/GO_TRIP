@@ -18,7 +18,7 @@
             <form  action="/blog/search" method="post">
                 {% csrf_token %}
                 <input type="search" class="search" placeholder="가고싶은 지역을 검색해주세요" aria-label="Search" name="q" value="{{q}}" maxlength="10" size="40">
-                <button type="submit" class="search_submit" >검색</button>
+                <input type="submit" class="search_submit" value="검색">
             </form>
         </div>
     </div>
