@@ -120,15 +120,20 @@
             <h2>회원가입</h2>
             <p>다음 정보를 입력하여 회원가입을 진행해주세요</p>
         </div>
+    </div>
+
+    <div class="line">
         <div class="searchArea">
-          <input type="search" class="search" placeholder="가고싶은 지역을 검색해주세요" maxlength="10" size="40">
-          <input type="submit" class="search_submit" value="검색">
+            <form  action="/blog/search" method="post">
+                {% csrf_token %}
+                <input type="search" class="search" placeholder="가고싶은 지역을 검색해주세요" aria-label="Search" name="q" value="{{q}}" maxlength="10" size="40">
+                <input type="submit" class="search_submit" value="검색">
+            </form>
         </div>
     </div>
 
-    <hr style="background-color: white; height: 10px;border: 0px;">
-
     <section class="contain">
+        <br><br>
         <form method="POST" action="/main/">
            {% csrf_token %}
             <fieldset>
@@ -246,8 +251,8 @@
             <br>
             <hr style="border: 1px dashed white; background-color: white;">
             <br>
-            <p align=center> <input class="button_" type="submit" value="가입하기">
-                <input class="button_" type="reset" value="다시쓰기">
+            <p align=center> <input class="submit" type="submit" value="가입하기">
+                <input class="submit" type="reset" value="다시쓰기">
             </p>
             <br>
         </form>
