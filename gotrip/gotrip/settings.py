@@ -14,6 +14,8 @@ from pathlib import Path
 import environ
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from django.urls import reverse_lazy
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env(
@@ -146,3 +148,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # 각 media file에 대한 URL prefix
 MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = reverse_lazy('serviceapp:main')
+LOGOUT_REDIRECT_URL = reverse_lazy('serviceapp:login')

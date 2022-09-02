@@ -25,7 +25,7 @@
     <!--메인 내용-->
     <div class="contain">
         <br><br>
-        <form method="POST" action="/main/">
+        <form method="post" action="">
            {% csrf_token %}
             <fieldset>
                 <legend align="center" style="font-size: 50px; font-weight: 800; color: rgb(105, 147, 224);"> 로그인 </legend>
@@ -36,7 +36,7 @@
                     <h3 class="info_name" class="login_box"><label><span style="color: red;">* </span>아 이 디 : </label></h3>
 
                     <span>
-                        <input class="in" type="text" id="Id" maxlength="12" minlength="5" placeholder="아이디" required>
+                        <input name="username" class="in" type="text" maxlength="12" minlength="5" placeholder="아이디" required>
                     </span>
 
                     <div id="id_ch" style="color: red;"></div>
@@ -48,7 +48,7 @@
                 <div style="font-size: 1em;">
                     <h3 class="info_name" class="login_box"><label><span style="color: red;">* </span>비밀번호 : </label></h3>
                     <span>
-                        <input class="in" type="password" id="Pw" maxlength="12" placeholder="비밀번호" required>
+                        <input name="password" class="in" type="password" maxlength="12" placeholder="비밀번호" required>
                     </span>
                     <div id="pw_ch" style="color: red;"></div>
                     <br>
@@ -58,9 +58,7 @@
             <br>
             <hr style="border: 1px dashed white; background-color: white;">
             <br>
-            <p align=center> <input class="submit" type="submit" value="로그인" style="width: 140px;">
-                <input class="submit" type="reset" value="아이디/비번찾기" style="width: 140px;">
-            </p>
+            <p align=center> <input class="submit" type="submit" value="로그인" style="width: 140px;"></p>
             <br>
         </form>
     </div>

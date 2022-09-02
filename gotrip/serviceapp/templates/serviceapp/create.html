@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="header">
+        {% include 'header.html' %}
+
+        <div class="section">
+            <h2>회원가입</h2>
+            <p>다음 정보를 입력하여 회원가입을 진행해주세요</p>
+        </div>
+    </div>
+
+    <div class="line">
+        <div class="searchArea">
+            <form  action="/blog/search" method="post">
+                {% csrf_token %}
+                <input type="search" class="search" placeholder="가고싶은 지역을 검색해주세요" aria-label="Search" name="q" value="{{q}}" maxlength="10" size="40">
+                <input type="submit" class="search_submit" value="검색">
+            </form>
+        </div>
+    </div>
+
+    <section class="contain">
+        <br><br>
+        <form action="{% url 'serviceapp:create' %}" method="post">
+           {% csrf_token %}
+            <fieldset>
+                <legend align="center" style="font-size: 50px; font-weight: 800; color: rgb(105, 147, 224);"> 가입 정보</legend><br>
+
+                <!-- 아이디 입력 -->
+                <div>
+                    <h3 class="info_name"><label><span class="ch" style="color: red;">* </span>아 이 디 : </label></h3>
+                    <input name="username" type="text" class="in" id="Id" maxlength="12" minlength="5" placeholder="아이디" required>
+                    <div>
+                        * 영문과 숫자의 조합으로 설정해주시기 바랍니다.<br>
+                        * 5자 이상 12 이하로 설정 가능합니다.
+                    </div>
+                    <div id="id_ch" style="color: red;"></div>
+                </div>
+
+                <!-- 비밀번호 -->
+                <div>
+                    <h3 class="info_name"><label><span class="ch" style="color: red;">* </span>비밀번호 : </label></h3><br>
+                    <input name="password1" type="password" class="in" id="Pw" maxlength="12" placeholder="비밀번호" required>
+                    <div>
+                        * 영문과 숫자의 조합으로 설정해주시기 바랍니다.<br>
+                        * 8자 이상으로 설정 가능합니다.
+                    </div>
+                    <div id="id_ch" style="color: red;"></div>
+                </div>
+
+                <!-- 비밀번호 재확인인-->
+               <div>
+                    <h3 class="info_name"><label><span class="ch" style="color: red;">* </span>비밀번호 재확인 : </label></h3>
+                    <input name="password2" type="password" class="in" id="PwCheck" maxlength="12" placeholder="비밀번호 재확인" required>
+                </div>
+
+                <br><br>
+
+            </fieldset>
+            <br>
+            <p align=center><input type="submit" class="submit" value="가입하기"></p>
+            <br>
+        </form>
+    </section>
+
+{% endblock %}

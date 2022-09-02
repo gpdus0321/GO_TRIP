@@ -4,8 +4,21 @@
         <ul>
             <li><a href="/main/">HOME</a></li>
             <li><a href="/blog/">여행 코스</a></li>
-            <li><a href="/membership/">회원가입</a></li>
-            <li><a href="/login/">로그인</a></li>
+
+            {% if not user.is_authenticated %}
+                <li><a href="/create/">회원가입</a></li>
+                <li>
+                    <a href="{% url 'serviceapp:login' %}">
+                        <span>로그인</span>
+                    </a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'serviceapp:logout' %}?next={{ request.path }}">
+                        <span>로그아웃</span>
+                    </a>
+                </li>
+            {% endif %}
         </ul>
     </nav>
 </div>

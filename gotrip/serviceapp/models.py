@@ -6,3 +6,8 @@ class Post(models.Model):
 
   def __str__(self):
     return str(self.title)
+
+class CreateAccount(models.Model):
+  username = models.CharField(max_length=10, null=False, primary_key=True)
+  password1 = models.CharField(max_length=20, null=False)
+  password2 = models.CharField(max_length=20, null=False)
