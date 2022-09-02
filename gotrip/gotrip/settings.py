@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'serviceapp',
     'blogapp',
     'django_summernote',
+    'mypage',
 ]
 
 MIDDLEWARE = [
